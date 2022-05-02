@@ -17,16 +17,16 @@
                 <th class="text-primary">
                     País
                 </th>
-                <th>
+                <th class="text-secondary">
                     Capital
                 </th>
-                <th>
+                <th class="text-success">
                     Moneda
                 </th>
-                <th>
+                <th class="text-danger">
                     Población
                 </th>
-                <th>
+                <th class="text-info">
                     Ciudades
                 </th>
             </tr>
@@ -37,17 +37,17 @@
                 <td class="text-primary" rowspan="{{ count($infopais['ciu']) }}">
                     {{ $pais }}
                 </td>
-                <td rowspan="{{ count($infopais['ciu']) }}">
+                <td class="text-secondary" rowspan="{{ count($infopais['ciu']) }}">
                     {{ $infopais["cap"] }}
                 </td>
-                <td rowspan="{{ count($infopais['ciu']) }}">
+                <td class="text-success" rowspan="{{ count($infopais['ciu']) }}">
                     {{ $infopais ["mon"] }}
                 </td>
-                <td rowspan="{{ count($infopais['ciu']) }}">
+                <td class="text-danger" rowspan="{{ count($infopais['ciu']) }}">
                     {{ $infopais ["pob"] }} millones hab.
                 </td>
                 @foreach($infopais["ciu"] as $ciudad)
-                <td>
+                <td class="text-info">
                     {{ $ciudad }}
                 </td>
             </tr>
