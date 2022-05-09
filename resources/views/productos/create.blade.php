@@ -53,6 +53,5 @@
               </button>
               </center>
           </div>
-        </form>   
-      
+        </form>
 @endsection
