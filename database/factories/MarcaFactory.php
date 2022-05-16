@@ -14,10 +14,11 @@ class MarcaFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
     public function definition()
     {
         return [
-            'nombre' => $this->faker->word()        
+            'nombre' => $this->faker->word()
         ];
     }
 }

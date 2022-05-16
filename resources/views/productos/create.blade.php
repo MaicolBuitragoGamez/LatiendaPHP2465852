@@ -35,6 +35,23 @@
             </div>
           </div>
 
+          <div class="row">
+            <div class="input-field col s8">
+              <select name="marca" id="marca">
+                <option>
+                    <select>
+                      <option>Elija la marca</option>
+                      @foreach ($marcas as marca)
+                          <option>
+                            {{ $marca->nombre }}
+                          </option>
+                      @endforeach
+                    </select>
+                </option>
+              </select>
+            </div>
+          </div>
+
           <form action="#">
             <div class="file-field input-field">
               <div class="btn">

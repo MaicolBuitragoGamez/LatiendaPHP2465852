@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{{ asset('materialize/css/materialize.css') }}">
     <title>HOLA-HOLA-HOLA</title>
 </head>
 <body>
     
     <nav>
         <div class="nav-wrapper cyan darken-3">
-          <a href="#" class="brand-logo">Logo</a>
+          <a href="#" class="brand-logo">La tienda PHP de Maicol y Nicolas</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="sass.html">Productos</a></li>
             <li><a href="badges.html">Pedidos</a></li>
@@ -26,6 +26,12 @@
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ asset('materialize/css/materialize.js') }}"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, []);
+      });
+    </script>
 </body>
 </html>

@@ -15,6 +15,7 @@ class MarcaSeeder extends Seeder
      */
     public function run()
     {
+        
         //Creación de 50 marcas ficticias.
 
         marca::factory(50)->create();
