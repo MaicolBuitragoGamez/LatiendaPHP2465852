@@ -26,7 +26,7 @@
 
 
 
-    <script src="{{ asset('materialize/css/materialize.js') }}"></script>
+    <script src="{{ asset('materialize/js/materialize.js') }}"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('select');

@@ -7,7 +7,8 @@
         padding-left: 50px;
     }
 </Style>
-        <form class="col s8">
+        <form class="col s8" method="POST" action="{{ route('productos.store') }}">
+          @csrf 
             <div class="row">
                 <div class="col s8">
                     <h1 class="cyan darken-3">Nuevo producto de la tienda</h1>
@@ -16,21 +17,21 @@
 
           <div class="row">
             <div class="input-field col s6">
-              <input placeholder="Nombre del producto" id="Nombre" type="text" class="validate">
+              <input name="nombre" placeholder="Nombre del producto" id="nombre" type="text" class="validate">
               <label for="nombre">Nombre del producto</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s8">
-              <input id="descripción" type="text" class="validate">
+              <input name="desc" id="desc" type="text" class="validate">
               <label for="desc">Descripción</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s8">
-              <input id="precio" type="number" class="validate">
+              <input name="precio" id="precio" type="number" class="validate">
               <label for="precio">Precio</label>
             </div>
           </div>
@@ -38,21 +39,29 @@
           <div class="row">
             <div class="input-field col s8">
               <select name="marca" id="marca">
-                <option>
-                    <select>
                       <option>Elija la marca</option>
-                      @foreach ($marcas as marca)
-                          <option>
+                      @foreach ($marcas as $marca)
+                          <option value="{{ $marca->id }}">
                             {{ $marca->nombre }}
                           </option>
                       @endforeach
-                    </select>
-                </option>
               </select>
             </div>
           </div>
 
-          <form action="#">
+          <div class="row">
+            <div class="col s8 input-field">
+              <select name="categoria" id="categoria">
+                @foreach($categorias as $categoria)
+                  <option value="{{ $categoria->id }}">
+                    {{ $categoria->nombre }}
+                  </option>
+                @endforeach
+              </select>
+            </div>
+          </div>
+
+          <div class="fila">
             <div class="file-field input-field">
               <div class="btn">
                 <span>Coloca aquí la imagen del producto</span>
@@ -62,13 +71,12 @@
                 <input class="file-path validate" type="text">
               </div>
             </div>
-          </form>
-
+          </div>
+          
           <div class="col s8">
-            <center>
-                <a class="waves-effect waves-light btn">Enviar</a>
-              </button>
-              </center>
+          <center>
+            <button class="btn waves-effect waves-light" type="submit">Enviar</button>
+          </center>
           </div>
         </form>
 @endsection
