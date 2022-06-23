@@ -17,7 +17,19 @@ class ProductoController extends Controller
      */
     public function index()
     {
+        /*
         echo "aquí va a ir el catálogo de productos ";
+        */
+
+        //Seleccionar todos los productos
+
+        $productos = Producto::all();
+        
+        //Mostrar vista del catalogo de productos
+        //Llevando la lista de productos
+
+        return view('productos.index')
+        ->with('productos', $productos);
     }
 
     /**
@@ -103,7 +115,7 @@ class ProductoController extends Controller
 
         $p = new Producto();
         $p->nombre = $r->nombre;
-        $p->descripción = $r->desc;
+        $p->descripcion = $r->desc;
         $p->precio = $r->precio;
         $p->marca_id = $r->marca;
         $p->categoria_id = $r->categoria;
@@ -112,7 +124,7 @@ class ProductoController extends Controller
         $p->save();
         //redirigir a prductos/create
         //con un mensaje exito
-        return redirect('productos/create')
+        return redirect('productos/create') 
                  ->with('mensajito' , 'Producto registrado exitosamente');
     }
 
